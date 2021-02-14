@@ -25,7 +25,5 @@ public class Aplicacao {
         Filme novoFilme2 = new Filme("AO Infinito e além", "Viagem ao infinito", "1.33.00",
                 2009, 5,  diretor2);
         novoFilme2.reproduzir();
-
-
     }
 }
