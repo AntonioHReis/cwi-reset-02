@@ -1,6 +1,6 @@
 package ProjetoMinhaCasaMinhaDesgraca;
 
-public class Imovel extends Endereco{
+public abstract class Imovel extends Endereco{
     private double valor;
 
     public Imovel(String logradouro, int numero, String complemento, String bairro, String cidade, UnidadeFederativa estado, double valor) {
@@ -10,7 +10,7 @@ public class Imovel extends Endereco{
 
    public String apresentacao() {
 
-        return "imóvel localizado no \n"
+        return "imóvel está localizado no \n"
                 + " endereco: "     +this.getLogradouro()
                 + " numero: "       +this.getNumero()
                 + " complemento: "  +this.getComplemento()

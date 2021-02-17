@@ -20,7 +20,9 @@ public class MinhaCasaMinhaDesgraca {
          * NÃO MODIFICAR ESTA CLASSE ANTES DESTA LINHA.
          */
 
-        for (int i = 0; i < 3; i++) {
+        final int QUANTIDADE = 1;   // Quantidade de imóveis que desejar registrar para efeitos de teste
+
+        for (int i = 0; i < QUANTIDADE; i++) {
             System.out.println("Digitando dados do imóvel: \n\n");
             System.out.print("Digite o logradouro........: ");
             String logradouroLido = new Scanner(System.in).nextLine();
@@ -37,11 +39,30 @@ public class MinhaCasaMinhaDesgraca {
             System.out.print("Digite o valor do imóvel...: ");
             double valorLido = new Scanner(System.in).nextDouble();
 
-            UnidadeFederativa valorEstado = UnidadeFederativa.valueOf(estadoLido)        ;
+            UnidadeFederativa valorEstado = UnidadeFederativa.valueOf(estadoLido);
 
-            Imovel novoImovel = new Imovel(logradouroLido,numeroLido,complementoLido,bairroLido,cidadeLida,valorEstado,valorLido);
-
-            opcoesParaFinanciamento.registrarImovel(novoImovel);
+            System.out.println("Este imóvel é uma casa (Sim/Não)? ");
+            String eUmaCasa = new Scanner(System.in).nextLine();
+            if (eUmaCasa.equals("Sim") == true){
+                System.out.println("Esta casa possui um pátio (Sim/Não) ?");
+                String temPatio = new Scanner(System.in).nextLine();
+                boolean patioLido = false;
+                if( temPatio.equals("Sim") == true){
+                    patioLido = true;
+                }
+                Casa novoImovel =  new Casa(logradouroLido,numeroLido,complementoLido,bairroLido,cidadeLida,
+                        valorEstado,valorLido,patioLido);
+                opcoesParaFinanciamento.registrarImovel(novoImovel);
+            }
+            else {
+                System.out.println("Este apartamento está localizado em qual andar? ");
+                int andar = new Scanner(System.in).nextInt();
+                Apartamento novoImovel =  new Apartamento(logradouroLido,numeroLido,complementoLido,bairroLido,cidadeLida,
+                        valorEstado,valorLido,andar);
+                opcoesParaFinanciamento.registrarImovel(novoImovel);
+            }
+            // Imovel novoImovel = new Imovel(logradouroLido,numeroLido,complementoLido,bairroLido,cidadeLida,valorEstado,valorLido);
+            // A linha acima foi substituida pelas classes Casa ou Apartamento.
         }
 
         /**
@@ -60,7 +81,7 @@ public class MinhaCasaMinhaDesgraca {
         Thread.sleep(1000);
 
         System.out.println(" Qual é o teu nome?");
-        String nomeBeneficiario = new Scanner(System.in).next();
+        String nomeBeneficiario = new Scanner(System.in).nextLine();
         Thread.sleep(500);
 
         System.out.println(" Agora eu preciso saber sobre a mascada, "+ nomeBeneficiario +". Qual é o teu salário?");
@@ -105,11 +126,11 @@ public class MinhaCasaMinhaDesgraca {
             }
         }
 
-
         System.out.println("\nShow de bola! Agora me diz em quantos meses você quer pagar essa tranqueira:");
         int mesesParaPagamento = new Scanner(System.in).nextInt();
 
-        System.out.printf("\nHumm, certo %s. Você ganha %s e quer financiar um imóvel de %s, no estado %s, pagando em %d meses. Deixa eu ver se é possível...\n\n",
+        System.out.printf("\nHumm, certo %s. Você ganha %s e quer financiar um imóvel de %s, no estado %s, " +
+                          "pagando em %d meses. Deixa eu ver se é possível...\n\n",
                 beneficiario.getNome(),
                 DecimalFormat.getCurrencyInstance().format(beneficiario.getSalario()),
                 DecimalFormat.getCurrencyInstance().format(imovelEscolhido.getValor()),

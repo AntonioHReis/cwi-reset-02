@@ -65,12 +65,6 @@ public class PropostaFinanciamento {
 
     private void imprimirDados(){
         System.out.println("Você escolheu o prazo de "+getPrazoDePagamento()+" meses.");
-        System.out.println("E o imóvel escolhido está localizado no: ");
-        System.out.println(" endereco: "     +getImovel().getLogradouro()
-                         + " numero: "       +getImovel().getNumero()
-                         + " complemento: "  +getImovel().getComplemento()
-                         + " bairro: "       +getImovel().getBairro()
-                         + " cidade: "       +getImovel().getCidade()
-                         + " estado: "       +getImovel().getEstado());
+        System.out.println("  "+getImovel().apresentacao());
     }
 }
