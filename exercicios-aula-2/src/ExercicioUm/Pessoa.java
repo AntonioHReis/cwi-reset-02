@@ -1,14 +1,18 @@
 package ExercicioUm;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 public class Pessoa {
 
     private String nome;
-    private int idade;
+    private LocalDate nascimento;
     private Genero genero;
 
-    public Pessoa(String nome, int idade, Genero genero) {
+    public Pessoa(String nome, LocalDate nascimento, Genero genero) {
         this.nome = nome;
-        this.idade = idade;
+        this.nascimento = nascimento;
         this.genero = genero;
     }
 
@@ -16,9 +20,12 @@ public class Pessoa {
         return nome;
     }
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
     public void imprimir (){
         System.out.println("Nome..........: " + this.nome);
-        System.out.println("Idade.........: " + this.idade);
+        System.out.println("Nascimento....: " + this.nascimento.format(formatter));
+        System.out.println("Idade.........: " + Period.between(this.nascimento,LocalDate.now()).getYears() + " anos");
         System.out.println("Gênero........: " + this.genero.getDescricao());
     }
 
