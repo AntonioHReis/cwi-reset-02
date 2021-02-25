@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Exercicio02/Exercicio02.iml" filepath="$PROJECT_DIR$/Exercicio02/Exercicio02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio03/Exercicio03.iml" filepath="$PROJECT_DIR$/Exercicio03/Exercicio03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OutroProjeto/OutroProjeto.iml" filepath="$PROJECT_DIR$/OutroProjeto/OutroProjeto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aula-03/aula-03.iml" filepath="$PROJECT_DIR$/aula-03/aula-03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cwi-reset-02.iml" filepath="$PROJECT_DIR$/.idea/cwi-reset-02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exercicios-aula-2/exercicios-aula-2.iml" filepath="$PROJECT_DIR$/exercicios-aula-2/exercicios-aula-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/minha-casa-minha-desgraca/minha-casa-minha-desgraca.iml" filepath="$PROJECT_DIR$/minha-casa-minha-desgraca/minha-casa-minha-desgraca.iml" />
+    </modules>
+  </component>
+</project>

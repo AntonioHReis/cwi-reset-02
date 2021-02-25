@@ -9,6 +9,7 @@ public class ImoveisParaFinanciamento {
     private List<Imovel> imoveis;
 
     public ImoveisParaFinanciamento() {
+
         imoveis = new ArrayList<>();
     }
 
